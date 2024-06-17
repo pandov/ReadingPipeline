@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.4.0-devel-ubuntu20.04
+FROM nvidia/cuda:11.4.3-devel-ubuntu20.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -19,8 +19,8 @@ RUN pip3 install --upgrade pip==21.0.1
 
 # Install PyTorch
 RUN pip3 install --no-cache-dir \
-    torch==1.9.0+cu111 \
-    torchvision==0.10.0+cu111 \
+    torch==1.9.0 \
+    torchvision==0.10.0 \
     -f https://download.pytorch.org/whl/torch_stable.html
 
 ENV PYTHONPATH $PYTHONPATH:/workdir
